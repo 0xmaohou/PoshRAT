@@ -5,7 +5,7 @@
 # <Waits for Client to Connect>
 # Whats your order?: idle
 # Whats your order?: cmd
-#$ Whats your command?: Get-Process
+# Whats your command?: Get-Process
 #
 #
 
