@@ -38,7 +38,7 @@ function Receive-Request {
 }
 
 $listener = New-Object System.Net.HttpListener
-$listener.Prefixes.Add('http://+:8080/') # Must exactly match the netsh command above
+$listener.Prefixes.Add('http://+:8080/') 
 
 $listener.Start()
 'Listening ...'
@@ -47,7 +47,7 @@ while ($true) {
     $request = $context.Request
     $response = $context.Response
     
-    if ($request.Url -match '/fetch$' ) { # response to http://myServer:8000/fetch
+    if ($request.Url -match '/fetch$' ) { # 
         $response.ContentType = 'text/plain'
         $message = Read-Host 'Whats your order?'
 			if($message -eq 'cmd')
