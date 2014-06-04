@@ -15,7 +15,7 @@
 
 function Receive-Request {
    param(
-      [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
+      
       $Request
    )
    $output = ""
