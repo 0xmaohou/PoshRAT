@@ -6,8 +6,8 @@
 # Whats your order?: idle
 # Whats your order?: cmd
 # Whats your command?: Get-Process
-#
-#
+# Start Server - Then execute client
+# TODO - Make one script...
 
 
 
@@ -20,16 +20,12 @@ function Receive-Request {
    )
    $output = ""
 
-   #$size = $script:DefaultBufferSize
-   #if($Request.ContentLength64 -lt $size) {
+   
       $size = $Request.ContentLength64 + 1
-   #}
-
-   Write-Verbose "Receiving up to $size"
+      
    $buffer = New-Object byte[] $size
    do {
       $count = $Request.InputStream.Read($buffer, 0, $size)
-      Write-Verbose "Received $count"
       $output += $Request.ContentEncoding.GetString($buffer, 0, $count)
    } until($count -lt $size)
 
