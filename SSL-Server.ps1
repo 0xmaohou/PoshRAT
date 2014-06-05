@@ -131,8 +131,6 @@ $installCert = "netsh http add sslcert ipport=0.0.0.0:8082 certhash=$sslThumbpri
 $installCert
 'SSL Certificates Installed...'
 $listener.Prefixes.Add('https://+:8082/') #HTTPS Listener
-#Create and Install the Self-Signed SSL Cert
-	
 
 
 
