@@ -1,6 +1,7 @@
 PoshRAT
 =======
 
-PowerShell RAT over HTTP
-
+PowerShell RAT over HTTP(s)
 Proof of Concept
+
+
