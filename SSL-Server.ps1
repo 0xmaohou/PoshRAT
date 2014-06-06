@@ -127,8 +127,8 @@ if ($sslcertfake -eq $null)
 	$sslcertfake =  createCertificate  $ListenerIP $false
 }
 $sslThumbprint = $sslcertfake.Thumbprint 
-$installCert = "netsh http add sslcert ipport=0.0.0.0:8082 certhash=$sslThumbprint appid={e46ad221-627f-4c05-9bb6-2529ae1fa815}"
-$installCert
+$installCert = "netsh http add sslcert ipport=0.0.0.0:8082 certhash=$sslThumbprint appid='{e46ad221-627f-4c05-9bb6-2529ae1fa815}'"
+iex $installCert
 'SSL Certificates Installed...'
 $listener.Prefixes.Add('https://+:8082/') #HTTPS Listener
 
