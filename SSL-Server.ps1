@@ -5,7 +5,7 @@
 ####
 #
 # Create Certificates For SSL, without requiring makecert.exe
-# Creates and Trusts a CA, and then Signs Certificaets using that CA for SSL/TLS
+# Creates and Trusts a CA, and then Signs Certificates using that CA for SSL/TLS
 #
 ####
 
