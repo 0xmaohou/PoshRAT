@@ -143,7 +143,7 @@ function Receive-Request {
 	You can then execute a One-Line script to the "/connect" url of your listenomg Server to allow the Reverse shell to be started.
 	Change all references to 127.0.0.1 to the IP address of your Listening Server
 	This WILL, install certificates into your Local Machine Store of the server..  
-	Also the GUID appid='{e46ad221-627f-4c05-9bb6-2529ae1fa815}' is arbitrary and shoudl be changed.
+	Also the GUID appid='{e46ad221-627f-4c05-9bb6-2529ae1fa815}' is arbitrary and should be changed.
 	The reason for the connect on port 80 is as follows.
 	1.  This is fairly ubiquitous and most clients can make this type of external connection
 	2.  The code returned, sets up the encrypted channel, and disables the necessity of trusting certificates
